@@ -1,14 +1,17 @@
 import React from 'react';
 
+import './App.css';
+
 function Smurf(props) {
     return (
-        <div>
+        <div className='smurfCont'>
             {props.smurfs.map(smurf => {
                 return (
-                    <div>
-                        <p>{smurf.name}</p>
-                        <p>{smurf.age}</p>
-                        <p>{smurf.height}</p>
+                    <div className='smurfCard'>
+                        <h3>Smurf</h3>
+                        <li>Name: {smurf.name}</li>
+                        <li>Age: {smurf.age}</li>
+                        <li>Height: {smurf.height}</li>
                     </div>
                 );
             })}

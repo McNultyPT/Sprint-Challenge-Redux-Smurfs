@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { postSmurf } from '../actions';
+import './App.css';
 
 class SmurfForm extends React.Component {
     state = {
@@ -28,8 +29,9 @@ class SmurfForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='smurfFormCont'>
                 <form onSubmit={this.postSmurf}>
+                    <h2>🍄 Add a Smurf 🍄</h2>
                     <input 
                         type='text'
                         name='name'

@@ -21,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Smurf smurfs={this.props.smurfs} />
         <SmurfForm />
+        <Smurf smurfs={this.props.smurfs} />
       </div>
     );
   }
