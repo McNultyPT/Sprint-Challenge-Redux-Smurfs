@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { postSmurf } from '../actions';
+import { postSmurf, deleteSmurf } from '../actions';
 import './App.css';
 
 class SmurfForm extends React.Component {
@@ -26,6 +26,8 @@ class SmurfForm extends React.Component {
         e.preventDefault();
         this.props.postSmurf(this.state.smurf);
     }
+
+    deleteSmurf
 
     render() {
         return (
@@ -64,4 +66,4 @@ const mapStateToProps = state => {
     postingSmurf: state.postingSmurf
 }
 
-export default connect(mapStateToProps, { postSmurf })(SmurfForm);
+export default connect(mapStateToProps, { postSmurf, deleteSmurf })(SmurfForm);
