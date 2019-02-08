@@ -75,6 +75,7 @@ function reducer(state = initialState, action) {
         deletingSmurf: true,
       };
     case DELETE_SMURF_SUCCESS:
+    console.log(action.payload);
       return {
         ...state,
         deletingSmurf: false,

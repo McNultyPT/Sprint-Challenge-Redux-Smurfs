@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Smurf from './Smurf';
 import { postSmurf } from '../actions';
 import './App.css';
 
@@ -25,6 +26,14 @@ class SmurfForm extends React.Component {
     postSmurf = e => {
         e.preventDefault();
         this.props.postSmurf(this.state.smurf);
+        this.setState({
+            smurf: {
+                name: '',
+                age: '',
+                height: '',
+                id: ''
+            }
+        });
     }
 
     render() {
@@ -60,8 +69,8 @@ class SmurfForm extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
     postingSmurf: state.postingSmurf
-}
+})
 
 export default connect(mapStateToProps, { postSmurf })(SmurfForm);

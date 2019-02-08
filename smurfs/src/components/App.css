@@ -10,6 +10,11 @@
 }
 
 /* SmurfForm Styles ================================================= */
+.smurfFormCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .smurfFormCont form {
   display: flex;

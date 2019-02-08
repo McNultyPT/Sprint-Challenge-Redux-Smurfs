@@ -5,9 +5,9 @@ import { deleteSmurf } from '../actions';
 import './App.css';
 
 class Smurf extends React.Component {
-    deleteSmurf = e => {
+    deleteSmurf = (e, id) => {
         e.preventDefault();
-        this.props.deleteSmurf(this.props.smurfs.id);
+        this.props.deleteSmurf(id);
     }
 
     render() {
@@ -20,7 +20,7 @@ class Smurf extends React.Component {
                             <li>Name: {smurf.name}</li>
                             <li>Age: {smurf.age}</li>
                             <li>Height: {smurf.height}</li>
-                            <i onClick={this.deleteSmurf} id={smurf.id} class="fas fa-skull-crossbones fa-lg"></i>
+                            <i onClick={(e) => this.deleteSmurf(e, smurf.id)} class="fas fa-skull-crossbones fa-lg"></i>
                         </div>
                     );
                 })}
@@ -29,8 +29,9 @@ class Smurf extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state => ({
+    smurfs: state.smurfs,
     deletingSmurf: state.deletingSmurf
-}
+})
 
 export default connect(mapStateToProps, { deleteSmurf })(Smurf);
