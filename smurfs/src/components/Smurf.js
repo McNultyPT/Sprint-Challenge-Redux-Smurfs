@@ -12,6 +12,7 @@ function Smurf(props) {
                         <li>Name: {smurf.name}</li>
                         <li>Age: {smurf.age}</li>
                         <li>Height: {smurf.height}</li>
+                        <i class="fas fa-skull-crossbones fa-lg"></i>
                     </div>
                 );
             })}

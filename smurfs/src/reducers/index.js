@@ -14,6 +14,7 @@ const initialState = {
   smurfs: [],
   fetchingSmurfs: false,
   postingSmurf: false,
+  deletingSmurf: false,
   error: null
 }
 
