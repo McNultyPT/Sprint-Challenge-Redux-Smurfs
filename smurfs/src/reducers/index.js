@@ -50,17 +50,20 @@ function reducer(state = initialState, action) {
       };
     case POST_SMURF_START:
       return {
-        ...state,  
+        ...state,
+        postingSmurf: true  
       };
     case POST_SMURF_SUCCESS:
       return {
         ...state,
-        smurfs: action.payload
+        smurfs: action.payload,
+        postingSmurf: false
       };
     case POST_SMURF_ERROR:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        postingSmurf: false
       }
     default:
       return state;
