@@ -1,28 +1,109 @@
+/* General Styles ================================================== */
+
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('http://www.hdwallpaper.nu/wp-content/uploads/2016/11/Smurfs_wallpaper_013.jpg');
+  background-size: cover;
+  height: 1080px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* SmurfForm Styles ================================================= */
+.smurfFormCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.smurfFormCont form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 350px;
+  margin: 75px 0 0 0;
+  border: 5px solid red;
+  border-radius: 4px;
+  background-color: #7BA8C7;
+  opacity: .9;
+}
+
+.smurfFormCont h2 {
+  font-size: 30px;
+  margin: 35px 0 35px 0;
+}
+
+.smurfFormCont input {
+  width: 400px;
+  height: 40px;
+  margin: 0 0 15px 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #7BA8C7;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.smurfFormCont button {
+  width: 150px;
+  height: 35px;
+  margin: 10px 0 0 0;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  background-color: red;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurfFormCont button:hover {
+  width: 165px;
+  height: 40px;
+  border: 2px solid red;
+  background-color: white;
+  color: #7BA8C7;
 }
 
-.App-intro {
-  font-size: large;
+/* Smurf Styles ================================================== */
+
+.smurfCont {
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurfCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7BA8C7;
+  margin: 75px 10px 0 10px;
+  width: 250px;
+  height: 200px;
+  border: 3px solid red;
+  opacity: .9;
 }
+
+.smurfCard:hover {
+  opacity: 1;
+  border: 5px solid red;
+}
+
+.smurfCard h3 {
+  margin: 15px 0 20px 0;
+  font-weight: bold;
+  font-size: 22px;
+  color: red;
+  text-decoration: underline;
+}
+
+.smurfCard li {
+  margin: 5px 0 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+i {
+  margin: 0 0 0 215px;
+}
+

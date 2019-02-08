@@ -1,6 +1,25 @@
+import { 
+  FETCH_SMURF_START,
+  FETCH_SMURF_SUCCESS,
+  FETCH_SMURF_ERROR,
+  POST_SMURF_START,
+  POST_SMURF_SUCCESS,
+  POST_SMURF_ERROR,
+  DELETE_SMURF_START,
+  DELETE_SMURF_SUCCESS,
+  DELETE_SMURF_ERROR 
+} from '../actions';
 /*
   Be sure to import in all of the action types from `../actions`
 */
+
+const initialState = {
+  smurfs: [],
+  fetchingSmurfs: false,
+  postingSmurf: false,
+  deletingSmurf: false,
+  error: null
+}
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -13,6 +32,67 @@
    error: null
  }
 */
+
+function reducer(state = initialState, action) {
+  switch(action.type) {
+    case FETCH_SMURF_START:
+      return {
+        ...state,
+        fetchingSmurfs: true
+      };
+    case FETCH_SMURF_SUCCESS:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: action.payload
+      };
+    case FETCH_SMURF_ERROR:
+      return {
+        ...state,
+        fetchingSmurfs: false,
+        error: action.payload
+      };
+    case POST_SMURF_START:
+      return {
+        ...state,
+        postingSmurf: true  
+      };
+    case POST_SMURF_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        postingSmurf: false
+      };
+    case POST_SMURF_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+        postingSmurf: false
+      }
+    case DELETE_SMURF_START:
+      return {
+        ...state,
+        deletingSmurf: true,
+      };
+    case DELETE_SMURF_SUCCESS:
+    console.log(action.payload);
+      return {
+        ...state,
+        deletingSmurf: false,
+        smurfs: action.payload
+      };
+    case DELETE_SMURF_ERROR:
+      return {
+        ...state,
+        deletingSmurf: false,
+        error: action.payload
+      };
+    default:
+      return state;
+  }
+}
+
+export default reducer;
 
 /*
   You'll only need one smurf reducer for this project.
