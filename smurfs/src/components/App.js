@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getSmurf } from '../actions';
+import Smurf from './Smurf';
+import SmurfForm from './SmurfForm';
 import './App.css';
 
 /*
@@ -19,15 +21,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.props.smurfs.map(smurf => {
-          return (
-            <div>
-              <p>{smurf.name}</p>
-              <p>{smurf.age}</p>
-              <p>{smurf.height}</p>
-            </div>
-          );
-        })}
+        <Smurf smurfs={this.props.smurfs} />
+        <SmurfForm />
       </div>
     );
   }

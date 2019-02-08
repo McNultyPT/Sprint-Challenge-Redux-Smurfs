@@ -13,6 +13,7 @@ import {
 const initialState = {
   smurfs: [],
   fetchingSmurfs: false,
+  postingSmurf: false,
   error: null
 }
 
