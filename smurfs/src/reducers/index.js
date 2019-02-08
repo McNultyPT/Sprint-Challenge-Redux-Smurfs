@@ -1,4 +1,11 @@
-import { FETCH_SMURF_START, FETCH_SMURF_SUCCESS, FETCH_SMURF_ERROR } from '../actions';
+import { 
+  FETCH_SMURF_START,
+  FETCH_SMURF_SUCCESS,
+  FETCH_SMURF_ERROR,
+  POST_SMURF_START,
+  POST_SMURF_SUCCESS,
+  POST_SMURF_ERROR 
+} from '../actions';
 /*
   Be sure to import in all of the action types from `../actions`
 */
@@ -40,6 +47,20 @@ function reducer(state = initialState, action) {
         fetchingSmurfs: false,
         error: action.payload
       };
+    case POST_SMURF_START:
+      return {
+        ...state,  
+      };
+    case POST_SMURF_SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload
+      };
+    case POST_SMURF_ERROR:
+      return {
+        ...state,
+        error: action.payload
+      }
     default:
       return state;
   }
